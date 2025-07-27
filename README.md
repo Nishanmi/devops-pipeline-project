@@ -53,7 +53,7 @@ The base application code is sourced from: [https://github.com/hshar/website.git
 ## 🏗️ Project Structure
 
 devops-pipeline-project/
-├── Dockerfile
+<pre>```├── Dockerfile
 ├── index.html
 ├── Jenkinsfile
 ├── Deployment.yaml
@@ -68,7 +68,7 @@ devops-pipeline-project/
 │ ├── localhost.sh
 │ ├── master.sh
 │ └── slaves.sh
-└── README.md
+└── README.md ```</pre>
 
 
 ---
