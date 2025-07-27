@@ -1,5 +1,3 @@
-# DevOps Pipeline Project
-
 # DevOps Lifecycle Project for Analytics Pvt Ltd
 
 ## 📘 Project Description
@@ -17,47 +15,40 @@ The base application code is sourced from: [https://github.com/hshar/website.git
 ## 🧾 Project Requirements
 
 ### 1. Git Workflow
-
-* Use Git for version control.
-* Release deployments should be scheduled for the **25th of every month**.
+- Use Git for version control.
+- Release deployments should be scheduled for the **25th of every month**.
 
 ### 2. CodeBuild Integration
-
-* Automatically trigger **AWS CodeBuild** when code is pushed to the `master` branch.
+- Automatically trigger **AWS CodeBuild** when code is pushed to the `master` branch.
 
 ### 3. Docker Containerization
-
-* Containerize the app using a custom `Dockerfile`.
-* Automatically build the Docker image on every push to GitHub.
+- Containerize the app using a custom `Dockerfile`.
+- Automatically build the Docker image on every push to GitHub.
 
 ### 4. Kubernetes Deployment
-
-* Use a **Kubernetes cluster** in production.
-* Pull the Docker image from **DockerHub**.
-* Deploy with **2 replicas**.
-* Use a **NodePort** service exposing the app on **port 30008**.
+- Use a **Kubernetes cluster** in production.
+- Pull the Docker image from **DockerHub**.
+- Deploy with **2 replicas**.
+- Use a **NodePort** service exposing the app on **port 30008**.
 
 ### 5. Jenkins CI/CD Pipeline
-
-* Create a full **Jenkins Pipeline** to:
-
-  * Clone the repo
-  * Build the Docker image
-  * Push it to DockerHub
-  * Deploy it to Kubernetes
+- Create a full **Jenkins Pipeline** to:
+  - Clone the repo
+  - Build the Docker image
+  - Push it to DockerHub
+  - Deploy it to Kubernetes
 
 ### 6. Configuration Management
-
-* Automate setup and configuration of servers (e.g., Jenkins, Docker, Kubernetes, etc.) using a configuration management tool (like Ansible or shell scripts).
+- Automate setup and configuration of servers (e.g., Jenkins, Docker, Kubernetes, etc.) using a configuration management tool (like Ansible or shell scripts).
 
 ### 7. Infrastructure as Code (IaC)
+- Use **Terraform** to provision:
+  - VPC, subnets
+  - EC2 instances (e.g., Jenkins, master, slaves)
+  - Security Groups, IAM roles
+  - Any other AWS infrastructure needed
 
-* Use **Terraform** to provision:
-
-  * VPC, subnets
-  * EC2 instances (e.g., Jenkins, master, slaves)
-  * Security Groups, IAM roles
-  * Any other AWS infrastructure needed
+---
 
 ## 🏗️ Project Structure
 
@@ -68,41 +59,43 @@ devops-pipeline-project/
 ├── Deployment.yaml
 ├── Service.yaml
 ├── terraform/
-│   ├── main.tf
-│   ├── variables.tf
-│   └── outputs.tf
+│ ├── main.tf
+│ ├── variables.tf
+│ └── outputs.tf
 ├── ansible/
-│   ├── hosts
-│   ├── playbooks.yaml
-│   ├── localhost.sh
-│   ├── master.sh
-│   └── slaves.sh
+│ ├── hosts
+│ ├── playbooks.yaml
+│ ├── localhost.sh
+│ ├── master.sh
+│ └── slaves.sh
 └── README.md
 
 
+---
+
 ## 🚀 Project Objectives
 
-1. **Version Control**:  
+1. **Version Control**  
    - Git workflow implemented.  
    - Releases scheduled for the 25th of every month.
 
-2. **Continuous Integration**:  
+2. **Continuous Integration**  
    - GitHub → Jenkins triggers on every `master` branch commit.
 
-3. **Containerization**:  
+3. **Containerization**  
    - Docker used to containerize the app using a custom Dockerfile.  
    - Image built and pushed to [Docker Hub](https://hub.docker.com/repository/docker/nishant1784/devops-project2).
 
-4. **Continuous Deployment**:  
+4. **Continuous Deployment**  
    - Kubernetes cluster runs the container with 2 replicas.  
    - Exposed using a **NodePort** service on port **30008**.
 
-5. **Infrastructure as Code**:  
+5. **Infrastructure as Code**  
    - Terraform used to provision AWS EC2 instances:  
      - 1 Master  
      - 2 Slaves
 
-6. **Configuration Management**:  
+6. **Configuration Management**  
    - Ansible used to install Docker, Java, Kubernetes components on all nodes.
 
 ---
@@ -119,7 +112,3 @@ devops-pipeline-project/
 | Ansible     | Configuration management         |
 | AWS         | Cloud infrastructure (EC2)       |
 | Ubuntu 24.04| OS used in all EC2 instances     |
-
----
-
-
